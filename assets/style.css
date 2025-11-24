@@ -78,7 +78,7 @@
 
 /* Hero Section e2 */
 .hero-section {
-    height: 70vh;
+    height: 80vh;
     overflow: hidden;
     background-color: black;
     position: relative;
@@ -115,4 +115,44 @@
     font-family: 'F1Font', sans-serif !important;
     font-weight: 400;
     font-style: normal;
+}
+
+/* card */
+.team-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #111;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-card:hover img {
+    transform: scale(1.2);
+}
+
+.team-card .card-body {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.team-card:hover .card-body {
+    opacity: 1;
 }
