@@ -8,23 +8,25 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body class="bg-black text-white">
+    <!-- Navbar -->
     <nav class="glass-navbar navbar fixed-top rounded-4 shadow-sm d-flex flex-column align-items-center px-5 py-2">
-        <div class="navbar-links d-flex gap-4">
-            <a class="nav-link text-white f1-regular" href="#home">Home</a>
-            <a class="nav-link text-white f1-regular" href="#driver">Driver</a>
-            <a class="nav-link text-white f1-regular" href="#teams">Teams</a>
+        <div class="navbar-links ">
+            <ul class="navbar-nav d-flex flex-row gap-4">
+                <li class="nav-item"><a class="nav-link f1-regular" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link f1-regular" href="#drivers">Drivers</a></li>
+                <li class="nav-item"><a class="nav-link f1-regular" href="#teams">Teams</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Hero Section : Videoe2 -->
-    <section class="hero-section d-flex justify-content-center align-items-center text-center">
+    <!-- Hero : Videoe2 -->
+    <div class="hero-section d-flex justify-content-center align-items-center text-center">
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/heroVideo.mp4" type="video/mp4">
+            <source src="assets/imgvid/heroVideo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
 
@@ -34,8 +36,36 @@
             </h1>
             <p class="text-white fs-4 f1-regular">Speed. Precision. Legacy.</p>
         </div>
-    </section>
+    </div>
+
+    <!-- Teams -->
+    <div class="container py-5" id="teams">
+        <h1 class="f1-bold text-red text-center">F1 TEAMS 2025</h1>
+        <p class="text-center f1-regular mb-5">Find the current Formula 1 teams for the 2025 season.</p>
+        <div class="row justify-content-center" id="teams-row"></div>
+    </div>
+
+    <script src="assets/teams.js"></script>
+    <script>
+        var containerRow = document.getElementById("teams-row");
+
+        for (var i = 0; i < teams.length; i++) {
+            containerRow.innerHTML += `
+            <div class="col-6 mb-4">
+                <div class="team-card style="border-radius: 10px; overflow: hidden; background:#111;">                    
+                    <img src="${teams[i].image}" class="card-img-top" alt="${teams[i].teamName}" style="object-fit:cover; height:250px;">
+                    <div class="card-body text-center">
+                        <h2 class="card-title f1-bold" style="color: #FF1801">${teams[i].teamName}</h2>
+                        <p class="card-text f1-italic">Team Chief: ${teams[i].teamChief}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
