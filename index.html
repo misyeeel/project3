@@ -6,66 +6,198 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 Gallery</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body class="bg-black text-white">
-    <!-- Navbar -->
-    <nav class="glass-navbar navbar fixed-top rounded-4 shadow-sm d-flex flex-column align-items-center px-5 py-2">
-        <div class="navbar-links ">
-            <ul class="navbar-nav d-flex flex-row gap-4">
-                <li class="nav-item"><a class="nav-link f1-regular" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link f1-regular" href="#drivers">Drivers</a></li>
-                <li class="nav-item"><a class="nav-link f1-regular" href="#teams">Teams</a></li>
-            </ul>
+
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top rounded-4 shadow-sm px-4 py-2 mt-2" style="width:80%; left:50%; transform:translateX(-50%);
+            background: rgba(255,255,255,0.08); 
+            backdrop-filter: blur(20px) saturate(180%);
+            z-index:10;">
+        <div class="container d-flex justify-content-center">
+
+            <div class="navbar-links">
+                <ul class="navbar-nav d-flex flex-row gap-4">
+                    <li class="nav-item"><a class="nav-link f1-regular" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link f1-regular" href="#teams">Teams</a></li>
+                    <li class="nav-item"><a class="nav-link f1-regular" href="#drivers">Drivers</a></li>
+                    <li class="nav-item"><a class="nav-link f1-regular" href="#tracks">Tracks</a></li>
+                </ul>
+            </div>
+
         </div>
     </nav>
 
-    <!-- Hero : Videoe2 -->
-    <div class="hero-section d-flex justify-content-center align-items-center text-center">
-        <video class="hero-video" autoplay muted loop playsinline>
+    <!-- HERO -->
+    <div id="home"
+        class="d-flex justify-content-center align-items-center text-center position-relative overflow-hidden"
+        style="height:85vh;">
+
+        <video autoplay muted loop playsinline
+            style="position:absolute; top:50%; left:50%; width:100%; height:100%; object-fit:cover; transform:translate(-50%, -50%); z-index:0;">
             <source src="assets/imgvid/heroVideo.mp4" type="video/mp4">
         </video>
-        <div class="hero-overlay"></div>
+
+        <div
+            style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,1) 5%, rgba(0,0,0,0) 100%); z-index:1;">
+        </div>
 
         <div class="container position-relative z-3">
-            <h1 class="hero-title f1-wide text-center">
+            <h1 class="f1-wide display-1 text-center" style="color:#FF1801;">
                 F1 Gallery
             </h1>
-            <p class="text-white fs-4 f1-regular">Speed. Precision. Legacy.</p>
+            <p class="fs-4 f1-regular">Speed. Precision. Legacy.</p>
         </div>
     </div>
 
-    <!-- Teams -->
-    <div class="container py-5" id="teams">
-        <h1 class="f1-bold text-red text-center">F1 TEAMS 2025</h1>
-        <p class="text-center f1-regular mb-5">Find the current Formula 1 teams for the 2025 season.</p>
-        <div class="row justify-content-center" id="teams-row"></div>
+    <!-- ABOUT -->
+    <div class="about-section py-5 text-center">
+        <div class="container">
+            <h2 class="f1-bold mb-3">About This Gallery</h2>
+
+            <h5 class="f1-bold mb-3">
+                Welcome to my personal 2025 Formula 1 Gallery!
+            </h5>
+            <p class="f1-regular mb-3">
+                I’ve always loved cars, the kind of love where the sound of an engine instantly makes me say <b><i>“we like
+                    the cars, the cars that go tututututu.”</b></i> This gallery is my way of sharing that excitement with
+                fellow
+                fans.
+
+                Here, you can explore the fastest machines on the planet, meet the drivers who make them fly, and dive
+                into the iconic circuits that push them to their limits. Whether it’s the sleek curves of a Ferrari or
+                the thunderous roar of a Mercedes engine, every image is a celebration of the passion, precision, and
+                adrenaline that define Formula 1.
+            </p>
+            <p>
+                This isn’t just a gallery — it’s a tribute to speed, design, and the pure joy of motorsport.
+            </p>
+            <p class="f1-italic mb-5">
+                Curated by Michelle F. Olfindo
+            </p>
+        </div>
     </div>
 
+    <!-- TEAMS -->
+    <div class="container py-5" id="teams">
+        <div class="row justify-content-center" id="teams-row">
+            <h1 class="f1-bold text-center">F1 TEAMS 2025</h1>
+
+            <p class="text-center f1-regular mb-5">
+                Explore the 2025 F1 teams through this gallery, featuring champions and rising squads.<br>
+                Each image highlights unique cars, liveries, and team spirit.
+            </p>
+        </div>
+    </div>
+
+    <!-- DRIVERS -->
+    <div class="container py-5" id="drivers">
+        <div class="row justify-content-center" id="drivers-row">
+            <h1 class="f1-bold text-center">F1 DRIVERS 2025</h1>
+
+            <p class="text-center f1-regular mb-5">
+                Discover the stars of 2025, featuring champions and rising talents from around the world.<br>
+                Every driver brings their own racing identity and story.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- TRACKS -->
+    <div class="container py-5" id="tracks">
+        <div class="row justify-content-center" id="tracks-row">
+            <h1 class="f1-bold text-center">F1 TRACKS CIRCUITS</h1>
+
+            <p class="text-center f1-regular mb-5">
+                Explore iconic circuits from the 2025 season — from high-speed straights to street circuits.<br>
+                Each location carries its own history and challenges.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- ENDING -->
+    <div class="end position-relative text-center" style="height:100vh; overflow:hidden;">
+        <img src="assets/imgvid/end.jpg" alt="Ending Image" class="img-fluid w-100 h-100" style="object-fit: cover;">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background: linear-gradient(to bottom, rgba(0,0,0,1) 5%, rgba(0,0,0,0) 100%); z-index:1;">
+        </div>
+
+        <div class="position-absolute top-50 start-50 translate-middle z-3 text-white">
+            <p class="fs-4 f1-regular">A gallery by</p>
+            <h2 class="f1-wide display-5 text-center" style="color:#FF1801;">
+                MICHELLE F. OLFINDO
+            </h2>
+            <p class="fs-4 f1-regular">coule comme l'eau</p>
+        </div>
+    </div>
+
+    <!-- TEAMS SCRIPT -->
     <script src="assets/teams.js"></script>
     <script>
-        var containerRow = document.getElementById("teams-row");
+        var teamsRow = document.getElementById("teams-row");
 
         for (var i = 0; i < teams.length; i++) {
-            containerRow.innerHTML += `
-            <div class="col-6 mb-4">
-                <div class="team-card style="border-radius: 10px; overflow: hidden; background:#111;">                    
-                    <img src="${teams[i].image}" class="card-img-top" alt="${teams[i].teamName}" style="object-fit:cover; height:250px;">
-                    <div class="card-body text-center">
-                        <h2 class="card-title f1-bold" style="color: #FF1801">${teams[i].teamName}</h2>
-                        <p class="card-text f1-italic">Team Chief: ${teams[i].teamChief}</p>
+            teamsRow.innerHTML += `
+            <div class="col-12 col-lg-6 mb-1 text-center">
+                <div class="team-card my-3" style="background:#111; border-radius:10px;position: relative; overflow: hidden; cursor: pointer;">
+                    <img src="` + teams[i].image + `" class="card-img" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h1 class="f1-bold" style="color:#FF1801;">` + teams[i].teamName + `</h1>
+                        <p class="f1-italic">Team Chief: ` + teams[i].teamChief + `</p>
                     </div>
                 </div>
             </div>
-        `;
+            `;
+        }
+    </script>
+
+    <!-- DRIVERS SCRIPT -->
+    <script src="assets/drivers.js"></script>
+    <script>
+        var driversRow = document.getElementById("drivers-row");
+
+        for (var i = 0; i < drivers.length; i++) {
+            driversRow.innerHTML += `
+            <div class="col-6 col-md-4 col-lg-3 mb-1 text-center ">
+                <div class="driver-card my-3" style="background:#111; border-radius:10px; position: relative; overflow: hidden; cursor: pointer;">
+                    <img src="` + drivers[i].image + `" class="img-fluid rounded" alt="` + drivers[i].driverName + `">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                        <h2 class="f1-regular text-white">#` + drivers[i].driverNo + `</h2>
+                        <h1 class="f1-bold" style="color:#FF1801">` + drivers[i].driverName + `</h1>
+                        <p class="f1-italic text-white">` + drivers[i].driverTeam + `</p>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
+    </script>
+
+    <!-- TRACKS SCRIPT -->
+    <script src="assets/tracks.js"></script>
+    <script>
+        var tracksRow = document.getElementById("tracks-row");
+
+        for (var i = 0; i < tracks.length; i++) {
+            tracksRow.innerHTML += `
+            <div class="col-12 mb-1 d-flex justify-content-center ">
+                <div class="track-card my-3" style=" background:#111; border-radius:10px; position: relative; overflow: hidden; cursor: pointer;">                    
+                    <img src="` + tracks[i].image + `" alt="` + tracks[i].trackName + `">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                        <h1 class="f1-bold" style="color:#FF1801">` + tracks[i].trackName + `</h1>
+                        <p class="f1-italic text-white">` + tracks[i].trackLocation + `</p>
+                    </div>
+                </div>
+            </div>
+            `;
         }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
